@@ -20,10 +20,9 @@ Make sure the images are **exactly** in `img/` folder at the same level as READM
 
 Markdown works fine with JPGs. Your current syntax is okay:
 
-```markdown
-![LLM RAG Screenshot](img/llm_rag.jpg)
-![LLM RAG Screenshot 2](img/llm_rag1.jpg)
-```
+![LLM RAG Screenshot](./img/llm_rag.jpg)
+![LLM RAG Screenshot 2](./img/llm_rag1.jpg)
+
 
 ---
 
