@@ -80,7 +80,6 @@ mychatbot/
 ├── app.py                  # Main Streamlit application
 ├── rag_backend.py          # Backend processing logic
 ├── environment.yml         # Conda environment configuration
-├── .env                    # Environment variables
 ├── img/
 │   ├── llm_rag.jpg         # Architecture diagram
 │   └── llm_rag1.jpg        # Chatbot interface screenshot
