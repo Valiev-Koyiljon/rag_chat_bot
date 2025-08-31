@@ -1,108 +1,129 @@
+Absolutely! Here's a **polished README.md** for your Local RAG Chatbot project based on your code and setup instructions:
 
-# 📚 My Local RAG Chatbot 
+````markdown
+# 📚 Local RAG Chatbot
 
-A **Streamlit-based local chatbot** powered by **LangChain**, **Ollama**, and **ChromaDB**.
-This chatbot answers questions **strictly based on uploaded documents or website content**, without using any external knowledge or API keys.
-
----
-
-## **Features**
-
-* Upload CSV or PDF files for contextual Q\&A
-* Add website URLs for scraping and embedding
-* Use local Ollama LLM models (`exaone3.5:2.4b`)
-* Chat history with session memory
-* Answers are restricted to the provided documents
-* Stores embeddings locally in ChromaDB
+A local chatbot that answers questions using your uploaded PDFs, CSVs, and website content.  
+Built with **LangChain**, **Ollama LLM**, and **ChromaDB** for embeddings and retrieval.
 
 ---
 
-## **Setup**
+## 🚀 Features
+
+- Upload **CSV** and **PDF** files for document retrieval.  
+- Add **website URLs** to fetch content dynamically.  
+- Build embeddings locally using **Ollama embeddings**.  
+- Use **Ollama LLM** (`exaone3.5:2.4b`) to answer questions based only on the provided documents.  
+- Interactive **Streamlit** interface with chat history.
+
+---
+
+## 🛠 Installation & Setup
 
 ### 1. Clone the repository
-
 ```bash
 git clone <your-repo-url>
-cd <your-repo>
-```
+cd <your-repo-folder>
+````
 
-### 2. Create virtual environment
-
-```bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
-```
-
-### 3. Install dependencies
+### 2. Create the Conda environment
 
 ```bash
-pip install -r requirements.txt
+conda env create -f environment.yml
+conda activate local-rag-bot
 ```
 
-### 4. Environment Variables
+**`environment.yml` includes:**
 
-Create a `.env` file (no API key required):
+* Python 3.10
+* Streamlit
+* LangChain & Ollama integrations
+* ChromaDB
+* BeautifulSoup4, Requests, LXML for web scraping
+* PyPDF for PDF loading
 
-```env
-USER_AGENT=MyChatbot/1.0
-```
+### 3. Install Ollama Runtime
 
----
+* Download for your platform from [Ollama Downloads](https://ollama.com/download)
+* Install it (Windows `.exe` or macOS `.dmg`)
 
-### 5. Pull Ollama Models Locally
+### 4. Pull the required Ollama models
 
 ```bash
+# For embeddings
+ollama pull embedding:mxbai-embed-large
+
+# For chat / LLM
 ollama pull exaone3.5:2.4b
-ollama pull mxbai-embed-large
 ```
-
-> These models are required for the LLM and embeddings.
 
 ---
 
-### 6. Run the App
+## 🖥 Running the Chatbot
 
 ```bash
 streamlit run app.py
 ```
 
----
-
-## **Usage**
-
-1. Upload CSV or PDF files via the sidebar.
-2. Add a website URL (optional) to scrape content.
-3. Click **Process Data** to generate embeddings and store them in ChromaDB.
-4. Type your question in the chat box.
-5. The bot will answer **strictly based on the uploaded documents**.
+* Upload **PDF/CSV** files from the sidebar.
+* Add a **website URL** to include its content.
+* Click **“Process Data”** to build embeddings and store them in ChromaDB.
+* Ask questions in the chat input — the bot will only answer based on the loaded documents.
 
 ---
 
-## **Project Structure**
+## ⚙️ Project Structure
 
 ```
-.
-├─ app.py                # Main Streamlit app
-├─ rag_backend.py        # Data loaders & vectorstore builder
-├─ requirements.txt      # Python dependencies
-├─ .env                  # Environment variables (local)
-├─ uploads/              # Uploaded files
-└─ chroma_db/            # Persisted embeddings
+mychatbot/
+├─ app.py                 # Main Streamlit app
+├─ rag_backend.py         # Loaders & vectorstore builder
+├─ environment.yml        # Conda environment
+├─ uploads/               # Uploaded documents
+└─ chroma_db/             # Persisted embeddings
 ```
+
+### Backend Highlights
+
+* `WebsiteLoader(urls)`: Loads web page content using `WebBaseLoader`.
+* `CSVFileLoader(file_paths)`: Loads CSV documents.
+* `PDFLoader(pdf_files)`: Loads PDFs.
+* `build_vectorstore(docs)`: Splits documents and stores embeddings in **ChromaDB**.
 
 ---
 
-## **Requirements**
+## 📌 Notes
 
-* Python 3.10+
+* Ollama runtime must be installed and running for the chatbot to work.
+* The bot will **only answer based on the uploaded documents or website**; it will not use general knowledge.
+* Default URL included: [Yeongnam University](https://www.yu.ac.kr/english/index.do)
+
+---
+
+## 🔧 Dependencies
+
+* Python 3.10
 * Streamlit
-* LangChain
-* LangChain Ollama
-* LangChain Chroma
+* LangChain (`langchain`, `langchain-ollama`, `langchain-community`, `langchain-chroma`, `langchain-text-splitters`)
 * ChromaDB
-* python-dotenv
-* Additional dependencies listed in `requirements.txt`
+* Ollama (`ollama`)
+* BeautifulSoup4, Requests, LXML
+* PyPDF
 
 ---
+
+## 📷 Screenshot (Optional)
+
+![Chatbot Screenshot](screenshot.png)
+
+---
+
+## 💡 Tips
+
+* To add more websites, just enter the URL in the sidebar.
+* Keep your PDFs/CSVs in **uploads/** for easier management.
+* ChromaDB persists your embeddings, so you don’t need to rebuild every time.
+
+---
+
 
