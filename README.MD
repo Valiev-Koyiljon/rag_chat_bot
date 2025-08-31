@@ -1,4 +1,3 @@
-Absolutely! Here's a **polished README.md** for your Local RAG Chatbot project based on your code and setup instructions:
 
 ````markdown
 # 📚 Local RAG Chatbot
@@ -22,8 +21,8 @@ Built with **LangChain**, **Ollama LLM**, and **ChromaDB** for embeddings and re
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repo-url>
-cd <your-repo-folder>
+git clone https://github.com/Valiev-Koyiljon/rag_chat_bot/edit/main/README.MDd
+cd rag_chat_bot
 ````
 
 ### 2. Create the Conda environment
@@ -114,7 +113,9 @@ mychatbot/
 
 ## 📷 Screenshot (Optional)
 
-![Chatbot Screenshot](screenshot.png)
+![LLM RAG Screenshot](img/llm_rag.png)
+![LLM RAG Screenshot 2](img/llm_rag1.png)
+
 
 ---
 
