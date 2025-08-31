@@ -2,9 +2,6 @@
 
 Welcome to the **Local RAG Chatbot** project! This application enables you to build a conversational AI that can answer questions based on your own documents, such as PDFs, CSVs, and web content. It leverages LangChain, Ollama, ChromaDB, and Streamlit to provide an interactive and intelligent chatbot experience.
 
-/* ![RAG Chatbot Architecture](.img/llm_rag.jpg)*
-*Example architecture of the RAG chatbot*
-
 ---
 
 ## 🛠️ Project Overview
@@ -17,8 +14,6 @@ This chatbot utilizes a Retrieval-Augmented Generation (RAG) approach, combining
 * **Ollama LLM**: Powers the conversational AI with advanced language models.
 * **Streamlit Interface**: Provides an intuitive web interface for interaction.
 
-![Chatbot Interface Example](img/llm_rag1.jpg)
-*Example screenshot of the chatbot interface*
 
 ---
 
