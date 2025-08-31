@@ -113,8 +113,8 @@ mychatbot/
 
 ## 📷 Screenshot (Optional)
 
-![LLM RAG Screenshot](img/llm_rag.png)
-![LLM RAG Screenshot 2](img/llm_rag1.png)
+![LLM RAG Screenshot](img/llm_rag.jpg)
+![LLM RAG Screenshot 2](img/llm_rag1.jpg)
 
 
 ---
